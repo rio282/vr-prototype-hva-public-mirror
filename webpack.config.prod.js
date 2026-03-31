@@ -12,7 +12,7 @@ module.exports = merge(common, {
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "js/[name].[contenthash].js",
-		publicPath: "/",
+		publicPath: "https://rio282.github.io/vr-prototype-hva-public-mirror/",
 		clean: true,
 	},
 
