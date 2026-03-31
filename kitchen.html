@@ -11,14 +11,14 @@
 	<script src="https://unpkg.com/@c-frame/aframe-physics-system@4.2.2/dist/aframe-physics-system.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
 	<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-	<link rel="icon" type="image/png" href="_kitchen/assets/img/logo.png">
-	<script src="_kitchen/js/state.js"></script>
-	<script src="_kitchen/js/input.js"></script>
-	<script src="_kitchen/js/recipes.js"></script>
-	<script src="_kitchen/js/ingredients.js"></script>
-	<script src="_kitchen/js/world.js"></script>
-	<script src="_kitchen/js/reset.js"></script>
-	<script src="_kitchen/js/ui.js"></script>
+	<link rel="icon" type="image/png" href="./_kitchen/assets/img/logo.png">
+	<script src="./_kitchen/js/state.js"></script>
+	<script src="./_kitchen/js/input.js"></script>
+	<script src="./_kitchen/js/recipes.js"></script>
+	<script src="./_kitchen/js/ingredients.js"></script>
+	<script src="./_kitchen/js/world.js"></script>
+	<script src="./_kitchen/js/reset.js"></script>
+	<script src="./_kitchen/js/ui.js"></script>
 	<style>body {
 		margin: 0;
 	}</style>
@@ -29,32 +29,32 @@
 
 	<!-- All assets -->
 	<a-assets>
-		<audio id="cookingSound" src="_kitchen/assets/aud/cooking.mp3"></audio>
-		<audio id="backgroundSound" src="_kitchen/assets/aud/background.mp3"></audio>
-		<audio id="completeSound" src="_kitchen/assets/aud/complete.mp3"></audio>
-		<audio id="voicePopup" src="_kitchen/assets/aud/popup.mp3"></audio>
-		<audio id="voiceTipStart" src="_kitchen/assets/aud/tipstart.mp3"></audio>
-		<audio id="voiceTomatensoep" src="_kitchen/assets/aud/tomatensoep.mp3"></audio>
-		<audio id="voiceEiMetBacon" src="_kitchen/assets/aud/eimetbacon.mp3"></audio>
-		<audio id="voiceTomatenSnijden" src="_kitchen/assets/aud/tomatensnijden.mp3"></audio>
-		<audio id="voiceTomatenStukjes" src="_kitchen/assets/aud/tomatenstukjes.mp3"></audio>
-		<audio id="voiceKopjesWater" src="_kitchen/assets/aud/kopjeswater.mp3"></audio>
-		<audio id="voiceFornuisAan" src="_kitchen/assets/aud/fornuisaan.mp3"></audio>
-		<audio id="voiceWaterKoken" src="_kitchen/assets/aud/waterkoken.mp3"></audio>
-		<audio id="voiceZoutStrooien" src="_kitchen/assets/aud/zoutstrooien.mp3"></audio>
-		<audio id="voiceRoeren" src="_kitchen/assets/aud/roeren.mp3"></audio>
-		<audio id="voiceLaatKoken" src="_kitchen/assets/aud/laatkoken.mp3"></audio>
-		<audio id="voiceBaconInPan" src="_kitchen/assets/aud/baconinpan.mp3"></audio>
-		<audio id="voiceBaconBakken" src="_kitchen/assets/aud/baconbakken.mp3"></audio>
-		<audio id="voiceEiBreken" src="_kitchen/assets/aud/eibreken.mp3"></audio>
-		<audio id="voiceEenSter" src="_kitchen/assets/aud/eenster.mp3"></audio>
-		<audio id="voiceTweeSterren" src="_kitchen/assets/aud/tweesterren.mp3"></audio>
-		<audio id="voiceDrieSterren" src="_kitchen/assets/aud/driesterren.mp3"></audio>
-		<img id="logoImage" src="_kitchen/assets/img/logo.png" alt="Re-Life logo">
-		<img id="blackStarImage" src="_kitchen/assets/img/blackstar.png" alt="Black star">
-		<img id="yellowStarImage" src="_kitchen/assets/img/yellowstar.png" alt="Yellow star">
-		<img id="receptenInfoImage" src="_kitchen/assets/img/recepten.png" alt="Recipes information">
-		<img id="joystickInfoImage" src="_kitchen/assets/img/joystickuitleg.png" alt="Joystick controls guide">
+		<audio id="cookingSound" src="./_kitchen/assets/aud/cooking.mp3"></audio>
+		<audio id="backgroundSound" src="./_kitchen/assets/aud/background.mp3"></audio>
+		<audio id="completeSound" src="./_kitchen/assets/aud/complete.mp3"></audio>
+		<audio id="voicePopup" src="./_kitchen/assets/aud/popup.mp3"></audio>
+		<audio id="voiceTipStart" src="./_kitchen/assets/aud/tipstart.mp3"></audio>
+		<audio id="voiceTomatensoep" src="./_kitchen/assets/aud/tomatensoep.mp3"></audio>
+		<audio id="voiceEiMetBacon" src="./_kitchen/assets/aud/eimetbacon.mp3"></audio>
+		<audio id="voiceTomatenSnijden" src="./_kitchen/assets/aud/tomatensnijden.mp3"></audio>
+		<audio id="voiceTomatenStukjes" src="./_kitchen/assets/aud/tomatenstukjes.mp3"></audio>
+		<audio id="voiceKopjesWater" src="./_kitchen/assets/aud/kopjeswater.mp3"></audio>
+		<audio id="voiceFornuisAan" src="./_kitchen/assets/aud/fornuisaan.mp3"></audio>
+		<audio id="voiceWaterKoken" src="./_kitchen/assets/aud/waterkoken.mp3"></audio>
+		<audio id="voiceZoutStrooien" src="./_kitchen/assets/aud/zoutstrooien.mp3"></audio>
+		<audio id="voiceRoeren" src="./_kitchen/assets/aud/roeren.mp3"></audio>
+		<audio id="voiceLaatKoken" src="./_kitchen/assets/aud/laatkoken.mp3"></audio>
+		<audio id="voiceBaconInPan" src="./_kitchen/assets/aud/baconinpan.mp3"></audio>
+		<audio id="voiceBaconBakken" src="./_kitchen/assets/aud/baconbakken.mp3"></audio>
+		<audio id="voiceEiBreken" src="./_kitchen/assets/aud/eibreken.mp3"></audio>
+		<audio id="voiceEenSter" src="./_kitchen/assets/aud/eenster.mp3"></audio>
+		<audio id="voiceTweeSterren" src="./_kitchen/assets/aud/tweesterren.mp3"></audio>
+		<audio id="voiceDrieSterren" src="./_kitchen/assets/aud/driesterren.mp3"></audio>
+		<img id="logoImage" src="./_kitchen/assets/img/logo.png" alt="Re-Life logo">
+		<img id="blackStarImage" src="./_kitchen/assets/img/blackstar.png" alt="Black star">
+		<img id="yellowStarImage" src="./_kitchen/assets/img/yellowstar.png" alt="Yellow star">
+		<img id="receptenInfoImage" src="./_kitchen/assets/img/recepten.png" alt="Recipes information">
+		<img id="joystickInfoImage" src="./_kitchen/assets/img/joystickuitleg.png" alt="Joystick controls guide">
 	</a-assets>
 
 	<!-- SKY -->

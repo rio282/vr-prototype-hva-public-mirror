@@ -1,23 +1,29 @@
 {
 	"name": "project-webpack-version",
 	"version": "0.1.2",
-	"description": "",
+	"description": "TODO...",
 	"private": true,
 	"keywords": [
-		""
+		"Virtual Reality"
 	],
-	"license": "",
-	"author": "",
+	"license": "MIT",
+	"author": "Rio B.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rio282/vr-prototype-hva-public-mirror.git"
+	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "webpack serve --open --progress --config webpack.config.dev.js",
+		"tunnel": "ngrok http 8080",
+		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack --config webpack.config.prod.js",
-		"tunnel": "ngrok http 8080"
+		"deploy": "gh-pages -d dist"
 	},
 	"devDependencies": {
 		"copy-webpack-plugin": "^11.0.0",
 		"css-loader": "^7.1.4",
 		"eslint": "^10.0.3",
+		"gh-pages": "^6.3.0",
 		"html-webpack-plugin": "^5.6.0",
 		"sass": "^1.98.0",
 		"sass-loader": "^16.0.7",

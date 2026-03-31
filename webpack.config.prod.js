@@ -7,6 +7,8 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = merge(common, {
 	mode: "production",
 
+	entry: "./js/app.js",
+
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "js/[name].[contenthash].js",
@@ -35,16 +37,16 @@ module.exports = merge(common, {
 		// --- STATIC FILES ---
 		new CopyPlugin({
 			patterns: [
-				// Core assets
+				// core assets
 				{from: "img", to: "img"},
 				{from: "css", to: "css"},
 				{from: "js/vendor", to: "js/vendor"},
 
-				// Your large feature folders (CRITICAL)
+				// large feature folders (CRITICAL)
 				{from: "_kitchen", to: "_kitchen"},
 				{from: "aframe", to: "aframe"},
 
-				// Root static files
+				// root static files
 				{from: "favicon.ico", to: "favicon.ico"},
 				{from: "robots.txt", to: "robots.txt"},
 				{from: "404.html", to: "404.html"},
