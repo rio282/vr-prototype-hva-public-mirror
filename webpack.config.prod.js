@@ -43,7 +43,7 @@ module.exports = merge(common, {
 				{from: "js/vendor", to: "js/vendor"},
 
 				// large feature folders (CRITICAL)
-				{from: "_kitchen", to: "_kitchen"},
+				{from: "kitchen", to: "kitchen"},
 				{from: "aframe", to: "aframe"},
 
 				// root static files
