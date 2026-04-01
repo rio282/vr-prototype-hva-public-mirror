@@ -600,7 +600,6 @@ AFRAME.registerSystem("quest-system", {
 		// completed quest? -> skip generating objectives
 		if (quest.isCompleted()) {
 			container.appendChild(createText("Quest Completed!", 0.08));
-			// container.setAttribute("position", `0 ${-yOffset / 2} -1.5`);  // set before leaving
 			return;
 		}
 
@@ -633,8 +632,6 @@ AFRAME.registerSystem("quest-system", {
 			container.appendChild(progressBar);
 			yOffset -= 0.07;
 		});
-
-		// container.setAttribute("position", `0 ${-yOffset / 2} -1.5`);  // set last
 	}
 });
 
