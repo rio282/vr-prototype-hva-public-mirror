@@ -58,7 +58,7 @@ export function GroceryStore() {
 		preloadAssets.appendChild(groceryAssetItem);
 	});
 
-	// TODO: re-encode audio files. because right now they're invalid and cause crashes. use ffmpeg & maybe Audacity
+	// NOTE: invalid audio files WILL cause crashes
 	const groceryAudioFilesToLoad = _getAudioFilesFromGroceriesFolder();
 	groceryAudioFilesToLoad.forEach(groceryItemFile => {
 		const groceryAudio = document.createElement("audio");
