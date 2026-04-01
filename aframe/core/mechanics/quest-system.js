@@ -434,7 +434,7 @@ AFRAME.registerSystem("quest-system", {
 	},
 
 	addEventListeners() {
-		// NOTE: update as we go
+		// NOTE: update this function as we go
 		const scene = document.querySelector("a-scene");
 
 		scene.addEventListener(Objective.TYPE.COLLECT, (event) => {
