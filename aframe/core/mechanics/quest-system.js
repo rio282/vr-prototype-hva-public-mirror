@@ -77,6 +77,14 @@ export const REGISTRY = Object.freeze({
 		size: 3.5,
 		shape: "box",
 		mass: 5,
+		linearDamping: 0.967,
+		angularDamping: 0.420,
+	},
+	BREAD: {
+		id: "bread",
+		size: 0.467,
+		shape: "box",
+		mass: 0.5,
 		linearDamping: 0.99,
 		angularDamping: 0.99,
 	},
@@ -154,7 +162,32 @@ export const quests = [
 		title: "Boodschappenlijst",
 		description: "Verzamel alle ingredienten",
 		status: Quest.STATUS.AVAILABLE,
-		objectives: [],
+		objectives: [
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.BREAD.id,
+				goal: 1,
+				progress: 0,
+			}),
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.EGG.id,
+				goal: 3,
+				progress: 0,
+			}),
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.BACON.id,
+				goal: 1,
+				progress: 0,
+			}),
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.WATERMELON.id,
+				goal: 1,
+				progress: 0,
+			}),
+		],
 	}),
 	new Quest({
 		id: "shopping-list-random-stuff-3",
