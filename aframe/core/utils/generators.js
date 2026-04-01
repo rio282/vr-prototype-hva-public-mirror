@@ -1,0 +1,1 @@
+export function randomObjectId(){return crypto.getRandomValues(new Uint8Array(4)).reduce((t,r)=>t+r.toString(16).padStart(2,"0"),"")}

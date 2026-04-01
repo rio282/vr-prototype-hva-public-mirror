@@ -1,0 +1,1 @@
+require("aframe"),require("aframe-extras");export function isPlayerNearby(e,r,t=1){if(!e||!r)throw TypeError("Both the entity and player must exist.");const o=new THREE.Vector3,i=new THREE.Vector3;return e.object3D.getWorldPosition(o),r.object3D.getWorldPosition(i),o.distanceTo(i)<=t}

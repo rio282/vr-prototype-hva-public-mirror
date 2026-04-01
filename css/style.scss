@@ -1,0 +1,106 @@
+@use "bootstrap/scss/bootstrap" as bs;
+
+:root {
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+button.a-enter-vr-button {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: map-get(bs.$spacers, 2) !important;
+}
+
+.rs-base {
+	border-radius: var(--bs-border-radius) !important;
+}
+
+.rs-counter-value {
+	margin-right: map-get(bs.$spacers, 2) !important;
+	overflow-x: hidden !important;
+}
+
+#toast-container {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.toast {
+	color: white;
+	padding: 12px 20px;
+	border-radius: 6px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	font-family: sans-serif;
+	font-size: 14px;
+	opacity: 0;
+	transform: translateY(-20px);
+	transition: opacity 0.3s,
+	transform 0.3s;
+}
+
+.toast.show {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+}
+
+.toast.fade-out {
+	animation: fadeOut 0.5s forwards;
+}
+
+.option-card img {
+	border-radius: 20px;
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
+.option-card img:hover {
+	transform: scale(1.03);
+}
+
+.option-card {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.text-decoration-dotted-underline {
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+	text-decoration-color: bs.$text-muted;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+	transition: all 0.2s ease;
+
+	&:hover {
+		text-decoration-color: bs.$link-color;
+		text-underline-offset: 5px;
+	}
+}
