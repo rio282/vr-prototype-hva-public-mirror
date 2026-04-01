@@ -1,3 +1,3 @@
 # VR-Prototype Demonstrator CVA
 
-Publicly hosted on: [https://github.com/rio282/vr-prototype-hva-public-mirror](https://github.com/rio282/vr-prototype-hva-public-mirror)
+Publicly hosted on: [https://rio282.github.io/vr-prototype-hva-public-mirror/](https://rio282.github.io/vr-prototype-hva-public-mirror/)
