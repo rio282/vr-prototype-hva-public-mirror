@@ -1,11 +1,10 @@
-import {playSoundOnEntity} from "../utils/audio-utils";
-
 require("aframe");
 import "@/js/utils/array.js";
 import {Quest} from "@/aframe/core/models/quest.js";
 import {Objective} from "@/aframe/core/models/objective.js";
 import {AmbientAudio} from "@/aframe/core/utils/audio-utils.js";
 import {randomObjectId} from "@/aframe/core/utils/generators.js";
+import {playSoundOnEntity} from "@/aframe/core/utils/audio-utils";
 
 // TODO: move?
 export const REGISTRY = Object.freeze({
@@ -33,13 +32,70 @@ export const REGISTRY = Object.freeze({
 		linearDamping: 0.1,
 		angularDamping: 0.3,
 	},
+	TOMATO: {
+		id: "tomato",
+		size: 0.002,
+		shape: "box",
+		mass: 0.15,
+		linearDamping: 0.4,
+		angularDamping: 0.25,
+	},
+	SALT_SHAKER: {
+		id: "salt_shaker",
+		size: 0.5,
+		shape: "box",
+		mass: 0.2,
+		linearDamping: 0.6,
+		angularDamping: 0.5,
+	},
 });
 
 export const quests = [
 	new Quest({
-		id: "test-quest",
-		title: "Test Quest",
-		description: "This is a Test Quest!",
+		id: "shopping-list-tomato-soup",
+		title: "Oma's (of Opa's) Tomatensoep",
+		description: "Verzamel alle ingredienten voor de tomatensoep",
+		status: Quest.STATUS.AVAILABLE,
+		objectives: [
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.TOMATO.id,
+				goal: 3,
+				progress: 0,
+			}),
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.SALT_SHAKER.id,
+				goal: 1,
+				progress: 0,
+			}),
+		],
+	}),
+	new Quest({
+		id: "shopping-list-bacon-egg",
+		title: "Bacon, Kaas en Eieren...",
+		description: "🐭 - Min de kaas",
+		status: Quest.STATUS.AVAILABLE,
+		objectives: [],
+	}),
+	new Quest({
+		id: "shopping-list-random-stuff-1",
+		title: "Boodschappenlijst",
+		description: "Verzamel alle ingredienten",
+		status: Quest.STATUS.AVAILABLE,
+		objectives: [],
+	}),
+	new Quest({
+		id: "shopping-list-random-stuff-2",
+		title: "Boodschappenlijst",
+		description: "Verzamel alle ingredienten",
+		status: Quest.STATUS.AVAILABLE,
+		objectives: [],
+	}),
+	new Quest({
+		id: "shopping-list-random-stuff-3",
+		title: "Boodschappenlijst",
+		description: "Verzamel alle ingredienten",
 		status: Quest.STATUS.AVAILABLE,
 		objectives: [
 			new Objective({
@@ -270,7 +326,7 @@ AFRAME.registerSystem("quest-system", {
 
 	init: function () {
 		console.debug("Initializing quest system...");
-		this.questSystem = new QuestSystem(quests[0]);
+		this.questSystem = new QuestSystem(quests[0]);  // TODO: pick a random quest
 		this.questSystem.startQuest();
 		this.addEventListeners();
 		this.updateQuestInterface();
