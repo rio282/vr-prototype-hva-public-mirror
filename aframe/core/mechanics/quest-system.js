@@ -48,6 +48,30 @@ export const REGISTRY = Object.freeze({
 		linearDamping: 0.6,
 		angularDamping: 0.5,
 	},
+	BACON: {
+		id: "bacon",
+		size: 1,
+		shape: "box",
+		mass: 0.3,
+		linearDamping: 0.9,
+		angularDamping: 0.9,
+	},
+	EGG: {
+		id: "egg",
+		size: 0.067,
+		shape: "box",
+		mass: 0.1,
+		linearDamping: 0.9,
+		angularDamping: 0.01,
+	},
+	FRIED_CHICKEN: {
+		id: "fried_chicken",
+		size: 1,
+		shape: "box",
+		mass: 2.5,
+		linearDamping: 0.99,
+		angularDamping: 0.99,
+	},
 });
 
 export const quests = [
@@ -76,14 +100,40 @@ export const quests = [
 		title: "Bacon, Kaas en Eieren...",
 		description: "🐭 - Min de kaas",
 		status: Quest.STATUS.AVAILABLE,
-		objectives: [],
+		objectives: [
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.BACON.id,
+				goal: 2,
+				progress: 0,
+			}),
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.EGG.id,
+				goal: 3,
+				progress: 0,
+			}),
+		],
 	}),
 	new Quest({
 		id: "shopping-list-random-stuff-1",
 		title: "Boodschappenlijst",
 		description: "Verzamel alle ingredienten",
 		status: Quest.STATUS.AVAILABLE,
-		objectives: [],
+		objectives: [
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.FRIED_CHICKEN.id,
+				goal: 1,
+				progress: 0,
+			}),
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.WATERMELON.id,
+				goal: 2,
+				progress: 0,
+			}),
+		],
 	}),
 	new Quest({
 		id: "shopping-list-random-stuff-2",
