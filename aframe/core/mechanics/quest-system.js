@@ -217,6 +217,7 @@ export const quests = [
 	}),
 ];
 
+export const quest = quests.sample();  // picks a random quest
 
 /**
  * NOTE: YES, I used ChatGPT for the JSDocs. However, I did check everything and made minor adjustments.
@@ -423,7 +424,7 @@ AFRAME.registerSystem("quest-system", {
 
 	init: function () {
 		console.debug("Initializing quest system...");
-		this.questSystem = new QuestSystem(quests.sample());
+		this.questSystem = new QuestSystem(quest);
 		this.questSystem.startQuest();
 		this.addEventListeners();
 		this.updateQuestInterface();
@@ -636,13 +637,9 @@ AFRAME.registerSystem("quest-system", {
 });
 
 /**
- * Selects a random quest item from all quest objectives.
+ * Selects a random quest item from current quest objectives.
  * @returns {string|undefined} A randomly selected item identifier, or undefined if none exist.
  */
 export function getRandomQuestItem() {
-	return quests
-		.flatMap(q => q.objectives
-			.flatMap(o => o.item ? [o.item] : [])
-		)
-		.sample();
+	return quest.objectives.flatMap(o => o.item ? [o.item] : []).sample();
 }
