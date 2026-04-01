@@ -11,14 +11,14 @@
 	<script src="https://unpkg.com/@c-frame/aframe-physics-system@4.2.2/dist/aframe-physics-system.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
 	<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-	<link rel="icon" type="image/png" href="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/img/logo.png">
-	<script src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/js/state.js"></script>
-	<script src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/js/input.js"></script>
-	<script src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/js/recipes.js"></script>
-	<script src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/js/ingredients.js"></script>
-	<script src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/js/world.js"></script>
-	<script src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/js/reset.js"></script>
-	<script src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/js/ui.js"></script>
+	<link rel="icon" type="image/png" href="./kitchen/assets/img/logo.png">
+	<script src="./kitchen/js/state.js"></script>
+	<script src="./kitchen/js/input.js"></script>
+	<script src="./kitchen/js/recipes.js"></script>
+	<script src="./kitchen/js/ingredients.js"></script>
+	<script src="./kitchen/js/world.js"></script>
+	<script src="./kitchen/js/reset.js"></script>
+	<script src="./kitchen/js/ui.js"></script>
 	<style>body {
 		margin: 0;
 	}</style>
@@ -29,32 +29,32 @@
 
 	<!-- All assets -->
 	<a-assets>
-		<audio id="cookingSound" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/cooking.mp3"></audio>
-		<audio id="backgroundSound" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/background.mp3"></audio>
-		<audio id="completeSound" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/complete.mp3"></audio>
-		<audio id="voicePopup" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/popup.mp3"></audio>
-		<audio id="voiceTipStart" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/tipstart.mp3"></audio>
-		<audio id="voiceTomatensoep" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/tomatensoep.mp3"></audio>
-		<audio id="voiceEiMetBacon" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/eimetbacon.mp3"></audio>
-		<audio id="voiceTomatenSnijden" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/tomatensnijden.mp3"></audio>
-		<audio id="voiceTomatenStukjes" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/tomatenstukjes.mp3"></audio>
-		<audio id="voiceKopjesWater" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/kopjeswater.mp3"></audio>
-		<audio id="voiceFornuisAan" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/fornuisaan.mp3"></audio>
-		<audio id="voiceWaterKoken" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/waterkoken.mp3"></audio>
-		<audio id="voiceZoutStrooien" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/zoutstrooien.mp3"></audio>
-		<audio id="voiceRoeren" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/roeren.mp3"></audio>
-		<audio id="voiceLaatKoken" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/laatkoken.mp3"></audio>
-		<audio id="voiceBaconInPan" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/baconinpan.mp3"></audio>
-		<audio id="voiceBaconBakken" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/baconbakken.mp3"></audio>
-		<audio id="voiceEiBreken" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/eibreken.mp3"></audio>
-		<audio id="voiceEenSter" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/eenster.mp3"></audio>
-		<audio id="voiceTweeSterren" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/tweesterren.mp3"></audio>
-		<audio id="voiceDrieSterren" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/aud/driesterren.mp3"></audio>
-		<img id="logoImage" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/img/logo.png" alt="Re-Life logo">
-		<img id="blackStarImage" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/img/blackstar.png" alt="Black star">
-		<img id="yellowStarImage" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/img/yellowstar.png" alt="Yellow star">
-		<img id="receptenInfoImage" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/img/recepten.png" alt="Recipes information">
-		<img id="joystickInfoImage" src="<%= htmlWebpackPlugin.options.publicPath %>kitchen/assets/img/joystickuitleg.png" alt="Joystick controls guide">
+		<audio id="cookingSound" src="./kitchen/assets/aud/cooking.mp3"></audio>
+		<audio id="backgroundSound" src="./kitchen/assets/aud/background.mp3"></audio>
+		<audio id="completeSound" src="./kitchen/assets/aud/complete.mp3"></audio>
+		<audio id="voicePopup" src="./kitchen/assets/aud/popup.mp3"></audio>
+		<audio id="voiceTipStart" src="./kitchen/assets/aud/tipstart.mp3"></audio>
+		<audio id="voiceTomatensoep" src="./kitchen/assets/aud/tomatensoep.mp3"></audio>
+		<audio id="voiceEiMetBacon" src="./kitchen/assets/aud/eimetbacon.mp3"></audio>
+		<audio id="voiceTomatenSnijden" src="./kitchen/assets/aud/tomatensnijden.mp3"></audio>
+		<audio id="voiceTomatenStukjes" src="./kitchen/assets/aud/tomatenstukjes.mp3"></audio>
+		<audio id="voiceKopjesWater" src="./kitchen/assets/aud/kopjeswater.mp3"></audio>
+		<audio id="voiceFornuisAan" src="./kitchen/assets/aud/fornuisaan.mp3"></audio>
+		<audio id="voiceWaterKoken" src="./kitchen/assets/aud/waterkoken.mp3"></audio>
+		<audio id="voiceZoutStrooien" src="./kitchen/assets/aud/zoutstrooien.mp3"></audio>
+		<audio id="voiceRoeren" src="./kitchen/assets/aud/roeren.mp3"></audio>
+		<audio id="voiceLaatKoken" src="./kitchen/assets/aud/laatkoken.mp3"></audio>
+		<audio id="voiceBaconInPan" src="./kitchen/assets/aud/baconinpan.mp3"></audio>
+		<audio id="voiceBaconBakken" src="./kitchen/assets/aud/baconbakken.mp3"></audio>
+		<audio id="voiceEiBreken" src="./kitchen/assets/aud/eibreken.mp3"></audio>
+		<audio id="voiceEenSter" src="./kitchen/assets/aud/eenster.mp3"></audio>
+		<audio id="voiceTweeSterren" src="./kitchen/assets/aud/tweesterren.mp3"></audio>
+		<audio id="voiceDrieSterren" src="./kitchen/assets/aud/driesterren.mp3"></audio>
+		<img id="logoImage" src="./kitchen/assets/img/logo.png" alt="Re-Life logo">
+		<img id="blackStarImage" src="./kitchen/assets/img/blackstar.png" alt="Black star">
+		<img id="yellowStarImage" src="./kitchen/assets/img/yellowstar.png" alt="Yellow star">
+		<img id="receptenInfoImage" src="./kitchen/assets/img/recepten.png" alt="Recipes information">
+		<img id="joystickInfoImage" src="./kitchen/assets/img/joystickuitleg.png" alt="Joystick controls guide">
 	</a-assets>
 
 	<!-- SKY -->
