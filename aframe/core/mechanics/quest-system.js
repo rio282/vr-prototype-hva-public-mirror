@@ -72,6 +72,14 @@ export const REGISTRY = Object.freeze({
 		linearDamping: 0.99,
 		angularDamping: 0.99,
 	},
+	HENNESSY: {
+		id: "hennessy",
+		size: 3.5,
+		shape: "box",
+		mass: 5,
+		linearDamping: 0.99,
+		angularDamping: 0.99,
+	},
 });
 
 export const quests = [
@@ -131,6 +139,12 @@ export const quests = [
 				type: Objective.TYPE.COLLECT,
 				item: REGISTRY.WATERMELON.id,
 				goal: 2,
+				progress: 0,
+			}),
+			new Objective({
+				type: Objective.TYPE.COLLECT,
+				item: REGISTRY.HENNESSY.id,
+				goal: 1,
 				progress: 0,
 			}),
 		],
@@ -376,7 +390,7 @@ AFRAME.registerSystem("quest-system", {
 
 	init: function () {
 		console.debug("Initializing quest system...");
-		this.questSystem = new QuestSystem(quests[0]);  // TODO: pick a random quest
+		this.questSystem = new QuestSystem(quests.sample());
 		this.questSystem.startQuest();
 		this.addEventListeners();
 		this.updateQuestInterface();
