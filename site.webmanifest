@@ -2,7 +2,7 @@
   "short_name": "",
   "name": "",
   "icons": [{
-    "src": "favicon.ico",
+    "src": "./favicon.ico",
     "type": "image/x-icon",
     "sizes": "192x192"
   }],
