@@ -10,6 +10,7 @@ import {playSoundOnEntity} from "@/aframe/core/utils/audio-utils";
 export const REGISTRY = Object.freeze({
 	WATERMELON: {
 		id: "watermelon",
+		text: "Watermeloen",
 		size: 4.25,
 		shape: "box",
 		mass: 1,
@@ -18,6 +19,7 @@ export const REGISTRY = Object.freeze({
 	},
 	CABBAGE: {
 		id: "cabbage",
+		text: "Krop Sla",
 		size: 3,
 		shape: "box",
 		mass: 0.5,
@@ -26,6 +28,7 @@ export const REGISTRY = Object.freeze({
 	},
 	LEMON: {
 		id: "lemon",
+		text: "Citroen",
 		size: 3,
 		shape: "box",
 		mass: 0.1,
@@ -34,6 +37,7 @@ export const REGISTRY = Object.freeze({
 	},
 	TOMATO: {
 		id: "tomato",
+		text: "Tomaat",
 		size: 0.002,
 		shape: "box",
 		mass: 0.15,
@@ -42,6 +46,7 @@ export const REGISTRY = Object.freeze({
 	},
 	SALT_SHAKER: {
 		id: "salt_shaker",
+		text: "Zout",
 		size: 0.5,
 		shape: "box",
 		mass: 0.2,
@@ -50,6 +55,7 @@ export const REGISTRY = Object.freeze({
 	},
 	BACON: {
 		id: "bacon",
+		text: "Bacon",
 		size: 1,
 		shape: "box",
 		mass: 0.3,
@@ -58,6 +64,7 @@ export const REGISTRY = Object.freeze({
 	},
 	EGG: {
 		id: "egg",
+		text: "Ei",
 		size: 0.067,
 		shape: "box",
 		mass: 0.1,
@@ -66,6 +73,7 @@ export const REGISTRY = Object.freeze({
 	},
 	FRIED_CHICKEN: {
 		id: "fried_chicken",
+		text: "Fried Chicken",
 		size: 1,
 		shape: "box",
 		mass: 2.5,
@@ -74,6 +82,7 @@ export const REGISTRY = Object.freeze({
 	},
 	HENNESSY: {
 		id: "hennessy",
+		text: "Hennessy (Drank)",
 		size: 3.5,
 		shape: "box",
 		mass: 5,
@@ -82,6 +91,7 @@ export const REGISTRY = Object.freeze({
 	},
 	BREAD: {
 		id: "bread",
+		text: "Brood (Heel)",
 		size: 0.467,
 		shape: "box",
 		mass: 0.5,

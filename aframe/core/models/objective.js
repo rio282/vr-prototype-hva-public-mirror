@@ -1,4 +1,5 @@
 import "@/js/utils/string.js";
+import {REGISTRY} from "@/aframe/core/mechanics/quest-system";
 
 export class Objective {
 	static TYPE = Object.freeze({
@@ -34,6 +35,14 @@ export class Objective {
 	}
 
 	toString() {
-		return `${this.type.split("-").pop()} ${this.goal} ${this.item}${this.goal > 1 ? "s" : ""}`.toTitleCase();
+		// yeah I mean I'm running out of time alright...
+		const ACTION_LABELS = {
+			[Objective.TYPE.COLLECT]: "Verzamel",
+			[Objective.TYPE.CUT]: "Snij",
+		};
+
+		const lookupItemText = () => Object.values(REGISTRY).find(item => item.id === this.item)?.text ?? "Onbekend";
+
+		return `${ACTION_LABELS[this.type] ?? "Onbekend"} ${lookupItemText()}`.toTitleCase();
 	}
 }
