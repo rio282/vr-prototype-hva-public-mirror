@@ -157,30 +157,49 @@ export function registerComponentVrHandGrab() {
 
 		tick: function () {
 			const hand = this.el;
+			const isGrabPressed = this.isGrabPressed();
 
 			if (window.vrMode === "menu") {
-				// Enable laser raycaster for UI
+				// Menu interaction
 				hand.setAttribute(
 					"raycaster",
 					"objects: .clickable; far: 4.5; showLine: true; enabled: true"
 				);
 				hand.setAttribute("line", "color: #9ee7ff; opacity: 0.95");
+				hand.setAttribute("laser-controls");
 
-				// Prevent grabbing objects in menu mode
+				// Enable super-hands only for clicks
+				hand.setAttribute("super-hands", {
+					colliderEvent: "raycaster-intersection",
+					grabStartButtons: [],       // disable grabbing
+					stretchStartButtons: [],
+					dragDropStartButtons: []
+				});
+
+				// Drop any held object
 				if (this.heldEl) this.drop();
+				this.wasGrabPressed = false; // reset grab state
 			} else {
-				// Grab mode: disable laser, enable grabbing
+				// Grab mode
 				hand.setAttribute(
 					"raycaster",
 					"objects: .grabbable; far: 2.5; showLine: false; enabled: false"
 				);
 				hand.removeAttribute("line");
+				hand.removeAttribute("laser-controls");
 
-				// Handle grab input
-				const pressed = this.isGrabPressed();
-				if (pressed && !this.wasGrabPressed) this.onPress();
-				if (!pressed && this.wasGrabPressed) this.onRelease();
-				this.wasGrabPressed = pressed;
+				// Disable super-hands for menu clicks
+				hand.setAttribute("super-hands", {
+					colliderEvent: "raycaster-intersection",
+					grabStartButtons: ["grip", "trigger"], // enable default buttons for grabbing
+					stretchStartButtons: ["grip", "trigger"],
+					dragDropStartButtons: ["grip", "trigger"]
+				});
+
+				// Handle grab input with custom vr-hand-grab
+				if (isGrabPressed && !this.wasGrabPressed) this.onPress();
+				if (!isGrabPressed && this.wasGrabPressed) this.onRelease();
+				this.wasGrabPressed = isGrabPressed;
 
 				// Keep held object aligned
 				if (this.heldEl) {

@@ -125,16 +125,21 @@ export function GroceryStore() {
 							super-hands="colliderEvent: raycaster-intersection"
 							oculus-touch-controls="hand: left; model: false"
 							vr-hand-grab="touchRadius: 0.24; palmY: -0.02; palmZ: -0.12"
-							raycaster="objects: .grabbable, .clickable"
-						></a-entity>
+							raycaster="objects: .clickable; far: 4.5"
+							cursor="rayOrigin: entity; fuse: false"
+							line="color: #9ee7ff; opacity: 0.95">
+						</a-entity>
+
 						<a-entity
 							id="rightHand"
 							hand-controls="hand: right"
 							super-hands="colliderEvent: raycaster-intersection"
 							oculus-touch-controls="hand: right; model: false"
 							vr-hand-grab="touchRadius: 0.24; palmY: -0.02; palmZ: -0.12"
-							raycaster="objects: .grabbable, .clickable"
-						></a-entity>
+							raycaster="objects: .clickable; far: 4.5"
+							cursor="rayOrigin: entity; fuse: false"
+							line="color: #9ee7ff; opacity: 0.95">
+						</a-entity>
 
 				</a-entity>
 

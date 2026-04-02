@@ -544,8 +544,8 @@ AFRAME.registerSystem("quest-system", {
 			restartBtn.setAttribute("color", "#4CAF50");
 			restartBtn.setAttribute("position", "-0.4 -0.5 0.01");
 			restartBtn.setAttribute("hoverable", "");
-			restartBtn.setAttribute("geometry", "primitive: plane; width: 0.6; height: 0.25");
-			restartBtn.classList.add("clickable");
+			restartBtn.setAttribute("geometry", "primitive: box; depth: 0.01; width: 0.6; height: 0.25");
+			restartBtn.classList.add("clickable", "hoverable");
 			restartBtn.addEventListener("grab-start", () => location.reload());  // reload ig
 			restartBtn.addEventListener("click", () => location.reload());  // reload ig
 
@@ -563,8 +563,8 @@ AFRAME.registerSystem("quest-system", {
 			exitBtn.setAttribute("color", "#f44336");
 			exitBtn.setAttribute("position", "0.4 -0.5 0.01");
 			exitBtn.setAttribute("hoverable", "");
-			exitBtn.setAttribute("geometry", "primitive: plane; width: 0.6; height: 0.25");
-			exitBtn.classList.add("clickable");
+			exitBtn.setAttribute("geometry", "primitive: box; depth: 0.01; width: 0.6; height: 0.25");
+			exitBtn.classList.add("clickable", "hoverable");
 			exitBtn.addEventListener("grab-start", () => (window.location.href = "/"));
 			exitBtn.addEventListener("click", () => (window.location.href = "/"));
 
