@@ -148,7 +148,7 @@ export function GroceryStore() {
 	// NOTE: leave this at the end
 	view.querySelector("a-scene").addEventListener("loaded", _ => {
 		if (DEBUG_MODE) addCustomDevTools();
-		AmbientAudio.start("#audio-ambience-sound");
+		AmbientAudio.start("#audio-ambience-sound", 0.15);
 	});
 }
 
