@@ -1,9 +1,17 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const packageJson = require("./package.json");
 
 module.exports = {
 	entry: {
 		app: "./js/app.js",
 	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: "./index.ejs",
+			version: packageJson.version,
+		}),
+	],
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		clean: true,
