@@ -1,10 +1,10 @@
 AFRAME.registerComponent("directional-ui", {
 	schema: {
-		threshold: {type: "number", default: 0.67},  // look-down
-		hysteresis: {type: "number", default: 0.1},  // prevent flickering
-		heightFromGround: {type: "number", default: 0.75},
-		horizontalDistanceFromPlayer: {type: "number", default: 0.5},
-		fadeSpeed: {type: "number", default: 0.05}
+		threshold: {type: "number", default: 0.6},  // look-down
+		hysteresis: {type: "number", default: 0.067},  // prevent flickering
+		heightFromGround: {type: "number", default: 0.5},
+		horizontalDistanceFromPlayer: {type: "number", default: 0.876},
+		fadeSpeed: {type: "number", default: 0.1}
 	},
 
 	init: function () {
