@@ -572,7 +572,7 @@ function setupMenuUi() {
 		// setMenuOpen(true);
 		// hideKitchenHint();
 
-		window.location.href = "/";
+		window.location.href = "./";
 	});
 
 	const clamp01 = (v) => Math.min(1, Math.max(0, v));

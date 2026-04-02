@@ -565,8 +565,8 @@ AFRAME.registerSystem("quest-system", {
 			exitBtn.setAttribute("hoverable", "");
 			exitBtn.setAttribute("geometry", "primitive: box; depth: 0.01; width: 0.6; height: 0.25");
 			exitBtn.classList.add("clickable", "hoverable");
-			exitBtn.addEventListener("grab-start", () => (window.location.href = "/"));
-			exitBtn.addEventListener("click", () => (window.location.href = "/"));
+			exitBtn.addEventListener("grab-start", () => (window.location.href = "./"));
+			exitBtn.addEventListener("click", () => (window.location.href = "./"));
 
 			const exitText = document.createElement("a-text");
 			exitText.setAttribute("value", "Verlaten");
