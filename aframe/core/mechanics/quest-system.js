@@ -510,13 +510,13 @@ AFRAME.registerSystem("quest-system", {
 			bg.setAttribute("opacity", "0.9");
 
 			const title = document.createElement("a-text");
-			title.setAttribute("value", "Game Finished");
+			title.setAttribute("value", "Simulatie Over");
 			title.setAttribute("align", "center");
 			title.setAttribute("position", "0 0.5 0.01");
 			title.setAttribute("width", "2");
 
 			const timeText = document.createElement("a-text");
-			timeText.setAttribute("value", `Time: ${formattedTimeString(totalTime)}`);
+			timeText.setAttribute("value", `Tijd: ${formattedTimeString(totalTime)}`);
 			timeText.setAttribute("align", "center");
 			timeText.setAttribute("position", "0 0.2 0.01");
 			timeText.setAttribute("width", "2");
@@ -548,7 +548,7 @@ AFRAME.registerSystem("quest-system", {
 			restartBtn.addEventListener("click", () => location.reload());  // reload ig
 
 			const restartText = document.createElement("a-text");
-			restartText.setAttribute("value", "Restart");
+			restartText.setAttribute("value", "Herstarten");
 			restartText.setAttribute("align", "center");
 			restartText.setAttribute("position", "0 0 0.01");
 			restartText.setAttribute("width", "2");
@@ -564,7 +564,7 @@ AFRAME.registerSystem("quest-system", {
 			exitBtn.addEventListener("click", () => (window.location.href = "/"));
 
 			const exitText = document.createElement("a-text");
-			exitText.setAttribute("value", "Exit");
+			exitText.setAttribute("value", "Naar Begin");
 			exitText.setAttribute("align", "center");
 			exitText.setAttribute("position", "0 0 0.01");
 			exitText.setAttribute("width", "2");
