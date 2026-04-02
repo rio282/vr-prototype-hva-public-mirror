@@ -36,6 +36,8 @@ import {AmbientAudio} from "@/aframe/core/utils/audio-utils";
  * @constructor
  */
 export function GroceryStore() {
+	window.vrMode = "grab";
+
 	if (DEBUG_MODE) redirectConsoleOutputForAFrame();
 	registerComponentDesktopMouseDrag();
 	registerComponentVrHandGrab();
@@ -116,7 +118,7 @@ export function GroceryStore() {
 								</a-entity>
 						</a-entity>
 
-						<!-- VR users -->
+						<!-- VR users (some settings get overriden in vr-hand-grab.js->tick()) -->
 						<a-entity
 							id="leftHand"
 							hand-controls="hand: left"

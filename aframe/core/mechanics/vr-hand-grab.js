@@ -79,7 +79,7 @@ export function registerComponentVrHandGrab() {
 		attach: function (target) {
 			this.heldEl = target;
 			target.dataset.vrHeldBy = this.el.id || "hand";
-			target.emit("grab-start", { hand: this.el }, false);
+			target.emit("grab-start", {hand: this.el}, false);
 
 			// Store physics state
 			this.hadDynamic = target.hasAttribute("dynamic-body");
@@ -156,29 +156,47 @@ export function registerComponentVrHandGrab() {
 		},
 
 		tick: function () {
-			const pressed = this.isGrabPressed();
+			const hand = this.el;
 
-			if (pressed && !this.wasGrabPressed) this.onPress();
-			if (!pressed && this.wasGrabPressed) this.onRelease();
+			if (window.vrMode === "menu") {
+				// Enable laser raycaster for UI
+				hand.setAttribute(
+					"raycaster",
+					"objects: .clickable; far: 4.5; showLine: true; enabled: true"
+				);
+				hand.setAttribute("line", "color: #9ee7ff; opacity: 0.95");
 
-			this.wasGrabPressed = pressed;
+				// Prevent grabbing objects in menu mode
+				if (this.heldEl) this.drop();
+			} else {
+				// Grab mode: disable laser, enable grabbing
+				hand.setAttribute(
+					"raycaster",
+					"objects: .grabbable; far: 2.5; showLine: false; enabled: false"
+				);
+				hand.removeAttribute("line");
 
-			// Keep held object aligned to palm or grab-point
-			if (this.heldEl) {
-				let offsetX = this.data.palmX;
-				let offsetY = this.data.palmY;
-				let offsetZ = this.data.palmZ;
+				// Handle grab input
+				const pressed = this.isGrabPressed();
+				if (pressed && !this.wasGrabPressed) this.onPress();
+				if (!pressed && this.wasGrabPressed) this.onRelease();
+				this.wasGrabPressed = pressed;
 
-				const grabPoint = this.heldEl.querySelector("#grab-point");
-				if (grabPoint) {
-					const pos = grabPoint.object3D.position;
-					offsetX = pos.x;
-					offsetY = pos.y;
-					offsetZ = pos.z;
+				// Keep held object aligned
+				if (this.heldEl) {
+					let offsetX = this.data.palmX;
+					let offsetY = this.data.palmY;
+					let offsetZ = this.data.palmZ;
+					const grabPoint = this.heldEl.querySelector("#grab-point");
+					if (grabPoint) {
+						const pos = grabPoint.object3D.position;
+						offsetX = pos.x;
+						offsetY = pos.y;
+						offsetZ = pos.z;
+					}
+					this.heldEl.object3D.position.set(offsetX, offsetY, offsetZ);
+					this.heldEl.object3D.rotation.set(0, 0, 0);
 				}
-
-				this.heldEl.object3D.position.set(offsetX, offsetY, offsetZ);
-				this.heldEl.object3D.rotation.set(0, 0, 0);
 			}
 		}
 	});

@@ -1,4 +1,3 @@
-require("aframe");
 import "@/js/utils/array.js";
 import {Quest} from "@/aframe/core/models/quest.js";
 import {Objective} from "@/aframe/core/models/objective.js";
@@ -544,7 +543,10 @@ AFRAME.registerSystem("quest-system", {
 			restartBtn.setAttribute("height", "0.25");
 			restartBtn.setAttribute("color", "#4CAF50");
 			restartBtn.setAttribute("position", "-0.4 -0.5 0.01");
+			restartBtn.setAttribute("hoverable", "");
+			restartBtn.setAttribute("geometry", "primitive: plane; width: 0.6; height: 0.25");
 			restartBtn.classList.add("clickable");
+			restartBtn.addEventListener("grab-start", () => location.reload());  // reload ig
 			restartBtn.addEventListener("click", () => location.reload());  // reload ig
 
 			const restartText = document.createElement("a-text");
@@ -560,11 +562,14 @@ AFRAME.registerSystem("quest-system", {
 			exitBtn.setAttribute("height", "0.25");
 			exitBtn.setAttribute("color", "#f44336");
 			exitBtn.setAttribute("position", "0.4 -0.5 0.01");
+			exitBtn.setAttribute("hoverable", "");
+			exitBtn.setAttribute("geometry", "primitive: plane; width: 0.6; height: 0.25");
 			exitBtn.classList.add("clickable");
+			exitBtn.addEventListener("grab-start", () => (window.location.href = "/"));
 			exitBtn.addEventListener("click", () => (window.location.href = "/"));
 
 			const exitText = document.createElement("a-text");
-			exitText.setAttribute("value", "Naar Begin");
+			exitText.setAttribute("value", "Verlaten");
 			exitText.setAttribute("align", "center");
 			exitText.setAttribute("position", "0 0 0.01");
 			exitText.setAttribute("width", "2");
@@ -579,6 +584,8 @@ AFRAME.registerSystem("quest-system", {
 			endScreen.appendChild(exitBtn);
 
 			camera.appendChild(endScreen);
+
+			window.vrMode = "menu";
 		});
 	},
 

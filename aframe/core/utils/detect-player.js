@@ -1,6 +1,3 @@
-require("aframe");
-require("aframe-extras");
-
 /**
  * Returns true if the entity is within `radius` of the player.
  * @param {AFRAME.Entity} entity - The entity to check.
